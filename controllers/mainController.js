@@ -12,9 +12,10 @@ mainCont.buildFeaturedGames = async function (req, res, next) {
         try {
             features += "<div class='game_card'>";
             const game = await API.fetchGameById(game_id);
-            console.log(game[0]);
-            const coverImage = await API.fetchCoverById(game[0].cover);
-            console.log(coverImage[0].image_id);
+            const coverId = game[0].cover;
+            console.log(coverId);
+            const coverImage = await API.fetchCoverById(coverId);
+            console.log(coverImage);
             features += "<h3 class='game_name'>" + game[0].name + "</h3>";
             features += "<p class='game_summary'>" + game[0].summary + "</p>";
             for (const genre_id of game[0].genres) {
