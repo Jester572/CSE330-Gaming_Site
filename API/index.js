@@ -39,7 +39,7 @@ API.fetchCoverById = async function(cover_id) {
             'Authorization': process.env.Authorization,
             'Content-Type': 'application/json'
         },
-        body: ` fields url, width; where id = ${cover_id};`
+        body: ` fields image_id, width; where id = ${cover_id};`
     });
     
     return await data.json();
