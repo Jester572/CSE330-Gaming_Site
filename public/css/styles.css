@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #4e888f;
+    --secondary-color: #333333;
+    --accent-color: #ffffff;
+}
+
+/* Main sections */
+header {
+    display: block;
+}
+
+nav {}
+
+main {
+    background-color: var(--secondary-color);
+}
+
+footer {}
+
+.navbar {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+/* Style for the navigation bar links */
+
+/* Change the link color when you hover over it */
+.navbar a:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+/* Style for the hamburger icon */
+
+.navbar a {
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 10px 8%;
+    text-decoration: none;
+    float: left;
+}
+
+#ham_button {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.logo h1 {
+    text-align: center;
+    font-family: 'Bradley Hand', cursive;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.logo nav {
+    padding: 10px 0px;
+    grid-column: 1;
+    grid-row: 2;
+}
