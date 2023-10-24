@@ -38,17 +38,8 @@ app.use('/discover', discoverRouter)
 app.use('/reviews', reviewsRouter)
 app.use('/reviews', searchRouter)
 
-app.get('/', async (req, res) => {
-    const featuredGames = mainController.buildFeaturedGames;
+app.get('/', mainController.buildFeaturedGames)
     
-    res.render('index', {
-        title: "Home",
-        games: featuredGames
-    })
-    
-
-    
-})
 
 app.get('/api/games/getPage', async (req, res) => {
     try {
