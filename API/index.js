@@ -65,7 +65,7 @@ API.fetchTenRandom = async function () {
             'Authorization': process.env.Authorization,
             'Content-Type': 'application/json'
         },
-        body: ` fields id;`
+        body: ` fields id; where rating > 80; limit 200;`
     });
 
     const random = get_random(await data.json());

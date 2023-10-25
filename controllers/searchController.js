@@ -7,7 +7,8 @@ const searchCont = {}
 
 searchCont.buildSearch = async function (req, res, next) {
     res.render('search/', {
-        title: "Search"
+        title: "Search",
+        page: null
     })
 }
 

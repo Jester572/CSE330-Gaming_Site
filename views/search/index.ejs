@@ -12,6 +12,6 @@
   <button type="submit">Search</button>
 </form>
 
-<% if (page) { %>
+<% if (page  !== null) { %>
 <h2>Results</h2>
-<%- page %> <% } else { res.redirect('/') } %>
+<%- page %> <% } %>
