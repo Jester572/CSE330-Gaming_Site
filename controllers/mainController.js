@@ -16,13 +16,14 @@ mainCont.buildFeaturedGames = async function (req, res, next) {
             console.log(coverId);
             const coverImage = await API.fetchCoverById(coverId);
             console.log(coverImage);
-            features += "<h3 class='game_name'>" + game[0].name + "</h3>";
-            features += "<p class='game_summary'>" + game[0].summary + "</p>";
+            features += "<div class='game_info'><h3>Title: </h3><h4 class='game_name'>" + game[0].name + "</h4>";
+            features += "<h3>Summary: </h3><p class='game_summary'>" + game[0].summary + "</p>";
+            features += "<h3>Genres: </h3><div class='game_genres'>";
             for (const genre_id of game[0].genres) {
                 const genres = await API.fetchGenreById(genre_id);
-                features += "<p class='game_genre'>" + genres[0].slug + "</p>";
+                features += "<p class='genre_card'>" + genres[0].slug + "</p>";
             }
-            features += "<img class='game_cover' src='https://images.igdb.com/igdb/image/upload/t_cover_small_2x/" + coverImage[0].image_id + ".jpg' alt='Cover image for" + game[0].name + "'></img>";
+            features += "</div></div><img class='game_cover' src='https://images.igdb.com/igdb/image/upload/t_cover_small_2x/" + coverImage[0].image_id + ".jpg' alt='Cover image for" + game[0].name + "'></img>";
             game_data.push(game[0]);
             features += "</div>";
 

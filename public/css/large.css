@@ -1,4 +1,12 @@
 @media only screen and (min-width: 32.5em) {
+    body {
+        max-width: 1100px;
+        margin: auto;
+        margin-top: 15px;
+        border: 3px solid rgb(255, 255, 255);
+        box-shadow: 7px 2px 15px black;
+    }
+
     #ham_button {
         display: none;
     }

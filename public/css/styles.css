@@ -1,21 +1,30 @@
 :root {
     --primary-color: #4e888f;
-    --secondary-color: #333333;
+    --secondary-color: #8c99b3;
     --accent-color: #ffffff;
 }
 
 /* Main sections */
+html {
+    background-image: url('../images/mainBackground.jpg');
+
+}
+
 header {
     display: block;
 }
-
-nav {}
 
 main {
     background-color: var(--secondary-color);
 }
 
-footer {}
+footer {
+    background-color: var(--secondary-color);
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+
+}
 
 .navbar {
     background-color: var(--secondary-color);
@@ -62,17 +71,75 @@ footer {}
     height: auto;
     grid-column: 1;
     grid-row: 1;
+    border: 2px solid var(--secondary-color);
+    border-radius: 2px;
 }
 
 .logo h1 {
+    text-shadow: 4px 7px 9px #000000;
+    font-size:xx-large;
+    color: #f2f2f2;
     text-align: center;
     font-family: 'Bradley Hand', cursive;
     grid-column: 1;
     grid-row: 3;
+    
 }
 
 .logo nav {
-    padding: 10px 0px;
+    padding: 0px 0px;
     grid-column: 1;
     grid-row: 2;
+    border:3px solid white;
+}
+
+/* Featured Games */
+
+h2 {
+    text-align: center;
+    padding: 15px;
+    margin-top: 0px;
+    text-decoration: underline;
+}
+
+#featured_games {
+    margin:20px;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+.game_card {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    margin: 15px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 7px 2px 15px black;
+    background-color: rgb(207, 207, 207);
+}
+
+.game_card p {
+    margin: 10px
+}
+
+.game_card h3 {
+    margin: 5px;
+    grid-column: 1;
+}
+
+.game_card h4 {
+    margin: 20px;
+    grid-column: 1;
+}
+
+.game_card img {
+    grid-row: 1/4;
+    grid-column: 2;
+    margin:  auto 10px;
+    padding: 10px;
+    justify-self: end;
+    box-shadow: -8px 5px 12px #000000;
+}
+
+.game_genre {
+
 }

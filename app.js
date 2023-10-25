@@ -38,6 +38,10 @@ app.use('/discover', discoverRouter)
 app.use('/reviews', reviewsRouter)
 app.use('/reviews', searchRouter)
 
+app.post
+
+
+
 app.get('/', mainController.buildFeaturedGames)
     
 
