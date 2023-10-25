@@ -6,8 +6,8 @@ const mainCont = {}
 mainCont.buildFeaturedGames = async function (req, res, next) {
     const game_ids = [119388, 119171, 204350];
 
-    let game_data = [];
-    let features = "<div id='featured_games'>";
+
+    let features = "<div class='featured_games'>";
     for (const game_id of game_ids) {
         try {
             features += "<div class='game_card'>";
@@ -23,8 +23,7 @@ mainCont.buildFeaturedGames = async function (req, res, next) {
                 const genres = await API.fetchGenreById(genre_id);
                 features += "<p class='genre_card'>" + genres[0].slug + "</p>";
             }
-            features += "</div></div><img class='game_cover' src='https://images.igdb.com/igdb/image/upload/t_cover_small_2x/" + coverImage[0].image_id + ".jpg' alt='Cover image for" + game[0].name + "'></img>";
-            game_data.push(game[0]);
+            features += "</div></div><img class='game_cover' src='https://images.igdb.com/igdb/image/upload/t_cover_small_2x/" + coverImage[0].image_id + ".jpg' alt='Cover image for" + game[0].name + "'>";
             features += "</div>";
 
         } catch (error) {
@@ -32,7 +31,7 @@ mainCont.buildFeaturedGames = async function (req, res, next) {
         }
     } 
 
-    features += "</div>"
+    features += "</div>";
     
 
     res.render("index", { title: 'Home', features })

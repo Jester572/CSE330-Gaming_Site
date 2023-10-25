@@ -140,6 +140,15 @@ h2 {
     box-shadow: -8px 5px 12px #000000;
 }
 
-.game_genre {
+/* Search */
 
+form {
+    margin: auto;
+    text-align: center;
 }
+
+form div {
+    padding: 10px;
+    background-color: var(--secondary-color);
+}
+

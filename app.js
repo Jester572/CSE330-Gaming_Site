@@ -13,6 +13,7 @@ const discoverRouter = require('./routes/discover');
 const reviewsRouter = require('./routes/reviews');
 const searchRouter = require('./routes/search');
 const mainController = require('./controllers/mainController');
+const axios = require('axios');
 
 
 /* ***********************
@@ -34,15 +35,39 @@ app.use(express.static('public'))
  * Routes
  *************************/
 app.use(static)
+app.get('/', mainController.buildFeaturedGames)
 app.use('/discover', discoverRouter)
 app.use('/reviews', reviewsRouter)
-app.use('/reviews', searchRouter)
+app.use('/search', searchRouter)
 
-app.post
+app.post('/api/post', async (req, res) => {
+    try {
+        // API endpoint you want to send a POST request to
+        const apiUrl = 'https://api.igdb.com/v4/games/';
 
+        // Data to send in the request body (if needed)
+        const data = `fields name, cover, genres, summary; where id = 204350;`
+        ;
 
+        // Define the request headers (e.g., Content-Type, Authorization)
+        const headers = {
+            'Client-ID': process.env.Client_ID,
+            'Authorization': process.env.Authorization,
+            'Content-Type': 'application/json'
+        };
 
-app.get('/', mainController.buildFeaturedGames)
+        // Send the POST request using axios
+        const response = await axios.post(apiUrl, data, { headers });
+
+        // Handle the response from the external API
+        const responseData = response.data;
+
+        res.json(responseData);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
     
 
 app.get('/api/games/getPage', async (req, res) => {

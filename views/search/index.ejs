@@ -1,0 +1,17 @@
+<form action="/search" method="POST">
+  <div id="num_responses">
+    <label for="game_amount">Number of Responses:</label>
+    <input type="number" id="game_amount" name="game_amount" required />
+  </div>
+
+  <div id="game_name">
+    <label for="game">Search for Game Name:</label>
+    <input type="text" id="game" name="game" required />
+  </div>
+
+  <button type="submit">Search</button>
+</form>
+
+<% if (page) { %>
+<h2>Results</h2>
+<%- page %> <% } else { res.redirect('/') } %>

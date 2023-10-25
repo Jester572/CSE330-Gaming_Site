@@ -1,10 +1,12 @@
-const { text } = require('body-parser');
 const express = require('express');
-const router = express.Router()
+const router = new express.Router()
+const Util = require('../utilities/index');
+const discoverController = require('../controllers/discoverController');
 
-router.get('/', (req, res) => {
-    res.send = 'hello'
-})
 
+
+router.get('/', discoverController.buildDiscover)
+
+router.post('/',)
 
 module.exports = router
